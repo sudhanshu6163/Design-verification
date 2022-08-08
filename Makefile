@@ -4,12 +4,10 @@ TOPLEVEL_LANG ?= verilog
 
 PWD=$(shell pwd)
 
-export PYTHONPATH := $(PWD):$(PYTHONPATH)  # reference model
+VERILOG_SOURCES = $(PWD)/nlprg8.v             # provide your design path
 
-VERILOG_SOURCES = $(PWD)/mkbitmanip.v
-
-TOPLEVEL := mkbitmanip        # design
-MODULE   := test_mkbitmanip   # test
+TOPLEVEL :=      nlprg8     # design file
+MODULE   :=    test_nlprg8 # test file
 
 include $(shell cocotb-config --makefiles)/Makefile.sim
 
